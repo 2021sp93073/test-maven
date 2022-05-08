@@ -1,2 +1,2 @@
 # test-maven
-This is maven test project...
+This is maven test project!

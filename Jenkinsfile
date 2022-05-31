@@ -1,9 +1,19 @@
 pipeline{
     agent any
     stages{
-        stage("Init"){
+        stage("Test"){
             steps{
-                echo "Initialize"            
+                sh 'mvn test'
+            }
+        }
+        stage("Build"){
+            steps{
+                sh 'mvn package'
+            }
+        }
+        stage("Deploy"){
+            steps{
+                echo "Deploy jar to server"
             }
         }
     }

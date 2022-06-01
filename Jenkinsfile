@@ -1,17 +1,22 @@
 pipeline{
     agent any
     stages{
-        stage("Test"){
+        stage("Git clone"){
+            steps{
+                git branch: '${HEAD}', url: 'https://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@github.com/2021sp93073/test-maven.git'
+            }
+        }
+        stage("Maven Test"){
             steps{
                 sh 'mvn test'
             }
         }
-        stage("Build"){
+        stage("Maven Build"){
             steps{
                 sh 'mvn package'
             }
         }
-        stage("Deploy"){
+        stage("Maven Deploy"){
             steps{
                 echo "Deploy jar to server"
             }

@@ -2,4 +2,4 @@
 
 Follow below steps to run on local machine: <incomplete>
 	- resolve maven dependencies
-  	- 2aa
+  	- 2aaa

@@ -16,10 +16,10 @@ pipeline{
                 echo "Deploy jar to server"
             }
         }
-        post{
-            success{
-                echo "BUILD BARABAR"
-            }   
-        }
+    }
+    post{
+        success{
+            echo "BUILD BARABAR"
+        }   
     }
 }

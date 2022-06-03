@@ -1,19 +1,19 @@
 pipeline{
     agent any
     stages{
-        stage("Maven Test"){
+        stage("Test"){
             steps{
-                echo "Test"
+                echo "mvn test"
             }
         }
-        stage("Maven Build"){
+        stage("Build"){
             steps{
-                echo "Build"
+                echo "mvn clean package"
             }
         }
-        stage("Maven Deploy"){
+        stage("Deploy"){
             steps{
-                echo "Deploy jar to server"
+                sh 'cf push ./target/test-maven-1.0-SNAPSHOT.jar'
             }
         }
     }

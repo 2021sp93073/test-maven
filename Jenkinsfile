@@ -21,11 +21,12 @@ pipeline{
         success{
              echo "BUILD kar"
             sh """
-                curl \
-                  -X POST https://api.github.com/repos/2021sp93073/test-maven/statuses/$GIT_COMMIT \
-                  -H "Accept: application/vnd.github.v3+json" \
-                  -d '{"state":"success","target_url":"http://20.255.56.92:8080/job/$JOB_NAME/$BUILD_NUMBER/console","description":"Jenkins","context":"Continuous-Integration"}'
-               """
+                set -x
+                curl \"https://api.github.com/repos/2021sp93073/test-maven/statuses/$GIT_COMMIT\" \
+                    -H \"Content-Type: application/json\" \
+                    -X POST \
+                    -d \"{\\\"description\\\": \\\"Jenkins\\\", \\\"state\\\": \\\"success\\\", \\\"context\\\": \\\"CI\\\", \\\"target_url\\\": \\\"http://20.255.56.92:8080/job/$JOB_NAME/$BUILD_NUMBER/console\\\"}\"
+                """
         }                
     }
 }

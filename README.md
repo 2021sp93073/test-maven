@@ -2,4 +2,4 @@
 
 Follow below steps to run on local machine: <incomplete>
 	- resolve maven dependencies
-  - TTT   DEV 1
+  - TTT   DEV 12
